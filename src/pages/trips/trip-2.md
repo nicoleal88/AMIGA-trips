@@ -1,0 +1,33 @@
+---
+layout: ../../layouts/MarkdownPostLayout.astro
+author: "AMIGA Team"
+title: "MUONES JR (id=54) - vie 22/12/2023"
+---
+
+## Salida a Campo - Team AMIGA
+
+### Team: Gustavo Rios, Gabriel Morales, Agustin Morales
+
+### Reporta: Agustin Morales
+
+### Hora: 09:30
+
+### Comentarios generales: Camioneta sin aire
+
+### Se apagó UUB?: No
+
+- Maleza: Leve
+- Erosión: Sin erosión
+- Acceso: Fácil
+
+---
+
+## Tipo de salida: Deployment E-Kits
+
+- M101 - SN del ekit: Sn 191
+- M101 instalado por: Gustavo Rios
+- M102 - SN del ekit: Sn 147
+- M102 instalado por: Gabriel Morales
+- M103 - SN del ekit: Sn 202
+- M103 instalado por: Agustin Morales
+- Comentarios: Hoy solamente se bajaron electrónicas, ya que cableado en batery box no se hace por motivos que van a remover el tanque por una ruptura, ya quedaron los 3 ekits instalados.

@@ -1,20 +1,24 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Trip from "../components/Trip.astro";
+import "../styles/global.css";
+const allTrips = await Astro.glob("../pages/trips/*.md");
+// console.log(allPosts);
+const pageTitle = "AMIGA Trips";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/trips/">Trips</a>
-    <h1>AMIGA Trips</h1>
-    <h2>Collection of all AMIGA Team Trips</h2>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Collection of all AMIGA Team Trips</h2>
+  <ul>
+    {
+      allTrips.map((trip) => (
+        <Trip
+          url={trip.url}
+          position={trip.frontmatter.position}
+          date={trip.frontmatter.date}
+          type={trip.frontmatter.type}
+        />
+      ))
+    }
+  </ul>
+</BaseLayout>

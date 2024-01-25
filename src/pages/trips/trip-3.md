@@ -1,0 +1,15 @@
+# CATHERINA (id=12) - mar 23/01/2024
+## Salida a Campo - Team AMIGA
+### Team: Agustin Morales, Luciana Torres
+### Reporta: Luciana Torres
+### Hora: 09:40
+### Comentarios generales: Clima: soleado.  camioneta: OK 
+### Se apagó UUB?: No 
+- Maleza: Intermedio
+- Erosión: Intermedio
+- Acceso: Fácil
+
+---------
+## Tipo de salida: Mantenimiento general
+   - Descripción de la tarea: Levantamos ekits en los 3 módulos, para poder así chequear cableado.  Quedaron funcionando
+M-101/M-103. Posible falla de ekit M-102. 
