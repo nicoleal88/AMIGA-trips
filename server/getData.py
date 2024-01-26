@@ -100,6 +100,7 @@ def extract_data(md_content):
 
     if match:
         position, id, date = match.groups()
+
         team_pattern = r"Team: (.+)"
         team_match = re.search(team_pattern, md_content)
         team = team_match.group(1).split(', ')
@@ -108,7 +109,6 @@ def extract_data(md_content):
         report_match = re.search(report_pattern, md_content)
         report = report_match.group(1)
 
-        # Extract information from "## Tipo de salida: Mantenimiento general"
         type_pattern = r"## Tipo de salida: (.+)"
         type_match = re.search(type_pattern, md_content)
         salida_type = type_match.group(1).title()  # Capitalize the first letter of each word
@@ -125,7 +125,7 @@ def extract_data(md_content):
     return None
 
 def generate_new_md(data, md_content):
-    frontmatter = f"---\nposition: \"{data['position']}\"\nid: {data['id']}\ndate: \"{data['date']}\"\nteam: {data['team']}\nreport: \"{data['report']}\"\ntype: \"{data['type']}\"\n---\n\n"
+    frontmatter = f"---\nposition: \"{data['position']}\"\nid: {data['id']}\ndate: \"{data['date']}\"\nteam: {data['team']}\nreport: \"{data['report']}\"\ntype: [\"{data['type']}\"]\n---\n\n"
 
     new_md_content = frontmatter + md_content
 

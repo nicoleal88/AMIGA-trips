@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const allTrips = await Astro.glob("../trips/*.md");
+const tripTypes = [
+  ...new Set(allTrips.map((trip) => trip.frontmatter.type).flat()),
+];
+
+const pageTitle = "Trip Type Index";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h3>Trip Type Page</h3>
+  <div class="trip-types">
+    {
+      tripTypes.map((type) => (
+        <p class="trip-type">
+          <a href={`/tags/${type}`}>{type}</a>
+        </p>
+      ))
+    }
+  </div>
+</BaseLayout>
+<style>
+  a {
+    color: #00539f;
+  }
+
+  .trip-types {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .trip-type {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    background-color: #f8fcfd;
+  }
+</style>

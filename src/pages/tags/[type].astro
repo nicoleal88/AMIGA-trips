@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Trip from "../../components/Trip.astro";
+
+export async function getStaticPaths() {
+  const allTrips = await Astro.glob("../trips/*.md");
+
+  const tripTypes = [
+    ...new Set(allTrips.map((trip) => trip.frontmatter.type).flat()),
+  ];
+
+  return tripTypes.map((type) => {
+    const filteredTrips = allTrips.filter((trip) =>
+      trip.frontmatter.type.includes(type)
+    );
+    return {
+      params: { type },
+      props: { trips: filteredTrips },
+    };
+  });
+}
+
+const { type } = Astro.params;
+const { trips } = Astro.props;
+---
+
+<BaseLayout pageTitle={type}>
+  <p>Posts tagged with {type}</p>
+  <ul>
+    {
+      trips.map((trip) => (
+        <>
+          <p>{trip.frontmatter.title}</p>
+          <Trip
+            url={trip.url}
+            position={trip.frontmatter.position}
+            date={trip.frontmatter.date}
+            type={trip.frontmatter.type}
+          />
+        </>
+      ))
+    }
+  </ul>
+</BaseLayout>
